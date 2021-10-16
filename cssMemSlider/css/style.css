@@ -1,0 +1,99 @@
+
+body {
+    background-color: #b2b2b2;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.slider_container {
+    max-width: 1000px;
+    max-height: 670px;
+    position: relative;
+    overflow: hidden;
+    border: 15px solid #fbefdf;
+    background-color: #fbefdf;
+}
+
+.navigation {
+    width: 23%;
+    position: absolute;
+    top: 96%;
+    left: 88.1%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.dot {
+    width: 30px;
+    padding-left: 3px;
+    height: 11px;
+    background-color: #8d6852;
+    opacity: 50%;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.dot:hover {
+    transition: ease-in-out 0.3s;
+    opacity: 90%;
+    transform: scale(1.4);
+}
+
+input {
+    position: absolute;
+    visibility: hidden;
+}
+
+.slider {
+    width: 400%;
+    height: 100%;
+    display: flex;
+}
+
+.slide {
+    width: 25%;
+    transition: all .6s ease;
+}
+
+.slide img {
+    width: 100%;
+}
+
+#rad1:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#rad2:checked ~ .s1 {
+    margin-left: -25%;
+}
+
+#rad3:checked ~ .s1 {
+    margin-left: -50%;
+}
+
+#rad4:checked ~ .s1 {
+    margin-left: -75%;
+}
+
+#rad1:checked ~ .navigation .dot1,
+#rad2:checked ~ .navigation .dot2,
+#rad3:checked ~ .navigation .dot3,
+#rad4:checked ~ .navigation .dot4 
+{    
+    background-color: #462e25;
+    opacity: 100%;
+}
+
+.description {
+    color: #27282d;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    display: block;
+    padding-top: .4em;
+}
