@@ -10,8 +10,8 @@ body {
 }
 
 .slider_container {
-    max-width: 1000px;
-    max-height: 670px;
+    max-width: 70vw;
+    /* max-height: 670px; */
     position: relative;
     overflow: hidden;
     border: 15px solid #fbefdf;
@@ -21,16 +21,28 @@ body {
 .navigation {
     width: 23%;
     position: absolute;
-    top: 96%;
+    top: 92%;
     left: 88.1%;
     transform: translateX(-50%);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    cursor: pointer;
+}
+
+label {
+    width: 100px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
 }
 
 .dot {
+    display: block;
     width: 30px;
-    padding-left: 3px;
+    /* padding-left: 3px; */
     height: 11px;
     background-color: #8d6852;
     opacity: 50%;
@@ -38,10 +50,11 @@ body {
     cursor: pointer;
 }
 
-.dot:hover {
+.dot:hover,
+label:hover {
     transition: ease-in-out 0.3s;
     opacity: 90%;
-    transform: scale(1.4);
+    transform: scale(1.3);
 }
 
 input {
@@ -80,13 +93,17 @@ input {
     margin-left: -75%;
 }
 
-#rad1:checked ~ .navigation .dot1,
-#rad2:checked ~ .navigation .dot2,
-#rad3:checked ~ .navigation .dot3,
-#rad4:checked ~ .navigation .dot4 
+#rad1:checked ~ .navigation .dot1 .dot,
+#rad2:checked ~ .navigation .dot2 .dot,
+#rad3:checked ~ .navigation .dot3 .dot,
+#rad4:checked ~ .navigation .dot4 .dot 
 {    
     background-color: #462e25;
     opacity: 100%;
+    width: 30px;
+    height: 11px;
+    /* padding-left: 3px; */
+    border-radius: 20%;
 }
 
 .description {
@@ -96,4 +113,38 @@ input {
     letter-spacing: .05em;
     display: block;
     padding-top: .4em;
+}
+
+@media  screen and (max-width: 400px) {
+    .description {
+        margin-top: 20px;
+        font-size: 11px;
+    }
+
+    .navigation {
+        top: 63%;
+        width: 65%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dot {
+        width: 20px;
+        height: 8px;
+    }
+
+    #rad1:checked ~ .navigation .dot1 .dot,
+    #rad2:checked ~ .navigation .dot2 .dot,
+    #rad3:checked ~ .navigation .dot3 .dot,
+    #rad4:checked ~ .navigation .dot4 .dot 
+    {    
+    width: 20px;
+    height: 8px;
+    }
+
+    .dot:hover,
+    label:hover {
+    transform: scale(1.1);
+}
+
 }
